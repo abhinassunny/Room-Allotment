@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Add new Hall {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="title">Hall name</label>
+        <input type="text" name="title"
+               placeholder="Enter hall name" class="form-control"
+               value="{{ request.form['title'] }}"></input>
+    </div>
+
+    <div class="form-group">
+        <label for="capacity">Capacity</label>
+        <textarea name="capacity" placeholder="Enter seating capacity"
+                  class="form-control"
+                  value="{{ request.form['capacity'] }}"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="location">Location</label>
+        <textarea name="location" placeholder="Location of the venue"
+                  class="form-control">{{ request.form['location'] }}</textarea>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

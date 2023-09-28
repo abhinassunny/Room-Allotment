@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} CSED Hall Booking{% endblock %}</h1>
+    <div class="post_div">
+        <a href="{{ url_for('admin') }}">
+            <h2 class="post_title">Admin Login</h2>
+        </a>
+            </div>
+            <div class="post_div">
+         <a href="{{ url_for('user') }}">
+            <h3 class="post_title">User Login</h3>
+        </a>
+        </div>
+        <hr>
+{% endblock %}

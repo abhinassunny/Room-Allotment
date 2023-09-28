@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ room['title'] }} {% endblock %}</h2>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <p>{{ room['title'] }} can accomodate {{ room['capacity'] }} people at a time.</p>
+    <p>{{ room['title'] }} is located in {{ room['location'] }}</p>
+{% endblock %}

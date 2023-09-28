@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Edit "{{ room['title'] }}" {% endblock %}</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="title">Hall Name</label>
+        <input type="text" name="title" placeholder="Enter Hall name"
+               class="form-control"
+               value="{{ request.form['title'] or room['title'] }}">
+        </input>
+    </div>
+
+    <div class="form-group">
+        <label for="capacity">Capacity</label>
+        <textarea name="capacity" placeholder="Enter seating capacity"
+                  class="form-control"
+                  value="{{ request.form['capacity'] or room['capacity'] }}"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="location">Location</label>
+        <textarea name="location" placeholder="Location of the venue"
+                  class="form-control"
+                  value="{{ request.form['location'] or room['location'] }}"></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+<hr>
+
+<form action="{{ url_for('delete', id=room['id']) }}" method="POST">
+    <input type="submit" value="Delete Hall"
+            class="btn btn-danger btn-sm"
+            onclick="return confirm('Are you sure you want to delete this post?')">
+</form>
+{% endblock %}
